@@ -1,5 +1,7 @@
 #
 # A python chat progran using TCP sockets with ecryption.
+# 
+# Auther: Oliver S. Neven
 # Written in 2016
 #
 # Client side script
@@ -22,16 +24,17 @@ def msg_recv(sock):
 	sys.exit(404)
 
 
+try:
+	host = sys.argv[1]
+	port = int(sys.argv[2])
+	passwd = sys.argv[3]
+	nick = sys.argv[4]
+except:
+	print "Arguments dosn't match"
+	sys.exit(404)
 
-host = 'localhost'
-port = 6400
-passwd = 'pass123'
 fernet = crypt.get_fernet(passwd)
-nick = 'dummy'
 sock = None
-
-
-
 
 # Create socket
 try:

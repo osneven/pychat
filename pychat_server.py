@@ -1,5 +1,7 @@
 #
 # A python chat progran using TCP sockets with ecryption.
+#
+# Auther: Oliver S. Neven
 # Written in 2016
 #
 # Server side script
@@ -59,10 +61,14 @@ def accept():
 
 	        except Exception as e:
 	                print 'Error at socket accpet: '  + str(e)
+try:
+	host = sys.argv[1]
+	port = int(sys.argv[2])
+	passwd = sys.argv[3]
+except:
+	print "Arguments dosn't match"
+	sys.exit(404)
 
-host = 'localhost'
-port = 6400
-passwd = 'pass123'
 fernet = crypt.get_fernet(passwd)
 sock = None
 conns = []

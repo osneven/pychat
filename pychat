@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# A simple script to lauch pychat
+#
+
+function help(){
+	echo -e "\n\tpychat"
+	echo -e "\t\tA secure chat progrom written in python."
+	echo -e "\t\tAuther: Oliver S. Neven\n"
+	echo "Usage: pychat [COMMAND] [ADDRESS] [PORT] [PASSWORD] <NICKNAME>"
+	echo -e "\tCOMMAND\t\t - Either 'server' or 'client'. Server will setup a server ready for connections, client will connect to a server."
+	echo -e "\tADDRESS\t\t - The address of the server."
+	echo -e "\tPORT\t\t - The listening port of the server."
+	echo -e "\tPASSWORD\t - The encryption password of the server."
+	echo -e "\tNICKNAME\t - The nick name to connect with, only used as a client."
+}
+
+if [ -z "$1" -o -z "$2" -o -z "$3" -o -z "$4" ]; then
+	help
+	exit
+fi
+
+if [ "$1" == "server" ]; then
+	python pychat_server.py $2 $3 $4
+elif [ "$1" == "client" -a -n "$5" ]; then
+	python pychat_client.py $2 $3 $4 $5
+else
+	help
+fi
