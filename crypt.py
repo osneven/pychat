@@ -4,7 +4,6 @@
 #
 
 import base64
-import os
 from cryptography.fernet import Fernet
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
@@ -12,7 +11,7 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 # Returns a fernet suite generated from the password
 def get_fernet(passwd):
-	passwd_bytes = bytes(passwd)
+	passwd_bytes = passwd.encode('UTF-8')
 	kdf = PBKDF2HMAC(
 		algorithm=hashes.SHA256(),
 		length=32,
