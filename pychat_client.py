@@ -19,7 +19,7 @@ def msg_recv(sock):
 			print (rmsg)
 		except:
 			break
-	print 'Server closed'
+	print ('Server closed')
 	sock.close()
 	sys.exit(404)
 
@@ -30,7 +30,7 @@ try:
 	passwd = sys.argv[3]
 	nick = sys.argv[4]
 except:
-	print "Arguments dosn't match"
+	print ('Arguments doesn\'t match')
 	sys.exit(404)
 
 fernet = crypt.get_fernet(passwd)
@@ -40,7 +40,7 @@ sock = None
 try:
 	sock = socket.socket()
 except Exception as e:
-	print 'Failed to create socket: ' + str(e)
+	print ('Failed to create socket:', str(e))
 	exit (404)
 
 # Connect to server
@@ -48,7 +48,7 @@ try:
 	sock.connect((host, port))
 	sock.send(fernet.encrypt(nick.encode('UTF-8')))
 except Exception as e:
-	print 'Failed to connect to server: ' + str(e)
+	print ('Failed to connect to server:', str(e))
 	exit (404)
 
 # Chat ! :D
@@ -56,15 +56,15 @@ recv = threading.Thread(target=msg_recv, args=[sock])
 recv.daemon = True
 recv.start()
 while True:
-	smsg = raw_input()
+	smsg = input()
 	if smsg == 'exit':
-                break
+		break
 	if smsg == '':
 		continue
 	try:
 		sock.send(fernet.encrypt(smsg.encode('UTF-8')))
 	except Exception as e:
-		print 'Failed to send message: ' + str(e)
+		print ('Failed to send message:', str(e))
 
 sock.close()
 sys.exit(0)

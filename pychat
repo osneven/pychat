@@ -21,9 +21,9 @@ if [ -z "$1" -o -z "$2" -o -z "$3" -o -z "$4" ]; then
 fi
 
 if [ "$1" == "server" ]; then
-	python pychat_server.py $2 $3 $4
+	python3 pychat_server.py $2 $3 $4
 elif [ "$1" == "client" -a -n "$5" ]; then
-	python pychat_client.py $2 $3 $4 $5
+	python3 pychat_client.py $2 $3 $4 $5
 else
 	help
 fi
