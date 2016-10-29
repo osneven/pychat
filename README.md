@@ -2,7 +2,7 @@
 A secure multi-user encrypted chat server and client written in python.
 
 ### Dependecies
-* [python 2.7.2](python.org/download/releases)
+* [python 3.5](python.org/download/releases)
 * [cryptography](cryptography.io/en/lastest)
 
 ### Syntax
