@@ -3,8 +3,8 @@ A "secure" multi-user encrypted chat server and client written in python.
 **WARNING: This is a hobby project and should only be used in educational circumstances!**
 
 ### Dependecies
-* [python 3.5](python.org/download/releases)
-* [cryptography](cryptography.io/en/lastest)
+* [python 3.5](https://www.python.org/download/releases/)
+* [cryptography](https://cryptography.io/en/latest/)
 
 ### Syntax
 *pychat* [**COMMAND**] [**ADDRESS**] [**PORT**] [**PASSWORD**] <**NICKNAME**>
@@ -28,6 +28,6 @@ This starts a server on the IP address of **127.0.0.1** listening on port **1234
 This connects to a server with an IP address of **127.0.0.1** listening on port **1234** with an encryption password of **password** as the user **Linus**.
 
 ### Encryption
-Pychat uses the fernet symetric key encryption developed by [cryptography](cryptography.io/en/lastest). As taken from their description: *Fernet guarantees that a message encrypted using it cannot be manipulated or read without the key. Fernet is an implementation of symmetric (also known as “secret key”) authenticated cryptography.*
+Pychat uses the fernet symetric key encryption developed by [cryptography](https://cryptography.io/en/latest/fernet/#fernet-symmetric-encryption). the fernet method encrypts messages using AES 128 in CBC mode, for full specifications about this system of encryption click [here](https://github.com/fernet/spec/blob/master/Spec.md). As taken from their description: *Fernet guarantees that a message encrypted using it cannot be manipulated or read without the key. Fernet is an implementation of symmetric (also known as “secret key”) authenticated cryptography.*
 
 Open connection, if the password is wrong, the client will get the message of *server closed*, otherwise if the passwords match, every user inside the server is free to chat.
