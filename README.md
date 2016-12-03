@@ -1,5 +1,6 @@
 # pychat
-A secure multi-user encrypted chat server and client written in python.
+A "secure" multi-user encrypted chat server and client written in python.
+**WARNING: This is a hobby project and should only be used in educational circumstances!**
 
 ### Dependecies
 * [python 3.5](python.org/download/releases)
