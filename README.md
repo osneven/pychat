@@ -28,6 +28,6 @@ This starts a server on the IP address of **127.0.0.1** listening on port **1234
 This connects to a server with an IP address of **127.0.0.1** listening on port **1234** with an encryption password of **password** as the user **Linus**.
 
 ### Encryption
-Pychat uses the fernet symetric key encryption developed by [cryptography](https://cryptography.io/en/latest/fernet/#fernet-symmetric-encryption). the fernet method encrypts messages using AES 128 in CBC mode, for full specifications about this system of encryption click [here](https://github.com/fernet/spec/blob/master/Spec.md). As taken from their description: *Fernet guarantees that a message encrypted using it cannot be manipulated or read without the key. Fernet is an implementation of symmetric (also known as “secret key”) authenticated cryptography.*
+Pychat uses the fernet symetric key encryption developed by [cryptography](https://cryptography.io/en/latest/fernet/#fernet-symmetric-encryption). The fernet method encrypts messages using AES 128 in CBC mode, for full specifications about this system of encryption click [here](https://github.com/fernet/spec/blob/master/Spec.md). As taken from their description: *Fernet guarantees that a message encrypted using it cannot be manipulated or read without the key. Fernet is an implementation of symmetric (also known as “secret key”) authenticated cryptography.*
 
 Open connection, if the password is wrong, the client will get the message of *server closed*, otherwise if the passwords match, every user inside the server is free to chat.
